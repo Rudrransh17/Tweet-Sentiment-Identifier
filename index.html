@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Sentiment Identifier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .intro-text {
+            margin-bottom: 20px;
+        }
+
+        .dataset-link {
+            color: blue;
+        }
+
+        .input-form {
+            margin-top: 20px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .submit-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Text Sentiment Identifier</h1>
+        <p class="intro-text">Welcome to this Text Sentiment Identifier developed by Rudrransh Saxena.</p>
+        <p>The model that I developed was trained on this <a class="dataset-link" href="https://www.kaggle.com/datasets/kazanova/sentiment140">dataset</a>.</p>
+        <form class="input-form" action="/predict" method="POST">
+            <input class="input-field" type="text" name="input_text" placeholder="Enter a text (maximum 50 words)" required>
+            <button class="submit-button" type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
