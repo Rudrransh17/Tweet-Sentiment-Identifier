@@ -41,3 +41,35 @@ h1 {
     cursor: pointer;
 }
 
+.table-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#resultsTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#resultsTable th:first-child{
+    width: 70%;
+    text-align: center;
+}
+#resultsTable td:first-child {
+    width: 70%;
+    text-align: left;
+}
+
+#resultsTable th:last-child,
+#resultsTable td:last-child {
+    width: 30%;
+    text-align: center;
+}
+
+#resultsTable th,
+#resultsTable td {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+

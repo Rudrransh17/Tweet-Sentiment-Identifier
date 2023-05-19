@@ -14,14 +14,12 @@
                     url: "/predict",
                     data: { text: input_text },
                     success: function (response) {
-                        $("#result").text(response.sentiment);
-
-                        
                         // Update the table
                         var table = $("#resultsTable");
                         var row = "<tr><td>" + input_text + "</td><td>" + response.sentiment + "</td></tr>";
                         table.append(row);
 
+                        // Empty the input field
                         $("#input_text").val('');
                     },
                     error: function (error) {
@@ -39,14 +37,16 @@
         <p class="intro-text">Welcome to this Text Sentiment Identifier developed by Rudrransh Saxena.</p>
         <p>The model that I developed was trained on this <a class="dataset-link"
                 href="https://www.kaggle.com/datasets/kazanova/sentiment140">dataset</a>.</p>
-        <input class="input-field" type="text" id="input_text" name="input_text" placeholder="Enter a text (maximum 50 words)" required>
+        <input class="input-field" type="text" id="input_text" name="input_text" placeholder="Enter a text (maximum 20 words)" required>
         <button class="submit-button" id="submitBtn" type="submit">Submit</button>
-        <table id="resultsTable">
-            <tr>
-                <th>Input Text</th>
-                <th>Sentiment</th>
-            </tr>
-        </table>
+        <div class="table-container">
+            <table id="resultsTable">
+                <tr>
+                    <th>Input Text</th>
+                    <th>Sentiment</th>
+                </tr>
+            </table>
+        </div>
     </div>
 </body>
 
