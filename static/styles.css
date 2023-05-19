@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -18,8 +18,22 @@ h1 {
     margin-bottom: 20px;
 }
 
+.profile-link {
+    color: blue;
+    text-decoration: none;
+} 
+
+.data {
+    margin-bottom: -15px;
+}
+
 .dataset-link {
     color: blue;
+    text-decoration: none;
+}
+
+.accuracy {
+    margin-top: none;
 }
 
 .input-form {
@@ -34,6 +48,7 @@ h1 {
 
 .submit-button {
     padding: 10px 20px;
+    margin-top: 2px;
     font-size: 16px;
     background-color: #4CAF50;
     color: white;
