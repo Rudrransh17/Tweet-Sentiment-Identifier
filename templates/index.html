@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <title>Text Sentiment Identifier</title>
@@ -56,4 +56,45 @@
         </form>
     </div>
 </body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Text Sentiment Identifier</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#submitBtn").click(function () {
+                var input_text = $("#input_text").val();
+                $.ajax({
+                    type: "POST",
+                    url: "/predict",
+                    data: { text: input_text },
+                    success: function (response) {
+                        $("#result").text(response.sentiment);
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Text Sentiment Identifier</h1>
+    <p>Welcome to this Text Sentiment Identifier developed by Rudrransh Saxena.</p>
+    <p>The model that I developed was trained on this dataset: <a
+            href="https://www.kaggle.com/datasets/kazanova/sentiment140">dataset</a></p>
+    <p>Enter a sentence:</p>
+    <input type="text" id="input_text" maxlength="50">
+    <button id="submitBtn">Submit</button>
+    <p>Sentiment: <span id="result"></span></p>
+</body>
+
 </html>

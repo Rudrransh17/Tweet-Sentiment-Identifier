@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from nltk.tokenize import word_tokenize  # Tokenizer to make tokens
 from nltk.stem import PorterStemmer  # Stemmer to perform stemming on tokens
 from nltk.corpus import stopwords  # Stopwords corpus from nltk library
@@ -26,10 +26,10 @@ def index():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    input_text = request.form['input_text']
+    input_text = request.form.get("text")
     # Process the input text or make predictions using your model
     output = sentiment(input_text)
-    return 'Sentiment : {}'.format(output)
+    return jsonify({"sentiment": output})
 
 
 def sentiment(input_text):
