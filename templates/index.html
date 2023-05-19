@@ -15,6 +15,13 @@
                     data: { text: input_text },
                     success: function (response) {
                         $("#result").text(response.sentiment);
+
+                        
+                        // Update the table
+                        var table = $("#resultsTable");
+                        var row = "<tr><td>" + input_text + "</td><td>" + response.sentiment + "</td></tr>";
+                        table.append(row);
+
                         $("#input_text").val('');
                     },
                     error: function (error) {
@@ -34,7 +41,12 @@
                 href="https://www.kaggle.com/datasets/kazanova/sentiment140">dataset</a>.</p>
         <input class="input-field" type="text" id="input_text" name="input_text" placeholder="Enter a text (maximum 50 words)" required>
         <button class="submit-button" id="submitBtn" type="submit">Submit</button>
-        <p>Sentiment: <span id="result"></span></p>
+        <table id="resultsTable">
+            <tr>
+                <th>Input Text</th>
+                <th>Sentiment</th>
+            </tr>
+        </table>
     </div>
 </body>
 
