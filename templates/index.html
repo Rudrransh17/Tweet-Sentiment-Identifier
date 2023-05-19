@@ -15,6 +15,7 @@
                     data: { text: input_text },
                     success: function (response) {
                         $("#result").text(response.sentiment);
+                        $("#input_text").val('');
                     },
                     error: function (error) {
                         console.log(error);
