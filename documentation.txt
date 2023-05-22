@@ -1,0 +1,31 @@
+Sentiment Analyser
+
+The dataset I used for this project was https://www.kaggle.com/datasets/kazanova/sentiment140
+
+Implementation ->
+1. Read the data with pandas
+2. Made a preprocess function to remove user tags, hyperlink, lowercasing, punctuation removal, tokenizationa and stemming. I did not removed stop words because they contain words like not, no etc which are important for sentiment analysis. Although Initially I did removed the stopwords but later I found that not removing them improved my model because of above mentioned reason.
+3. Store the tokens and target values in a separate file.
+4. Made a TF-IDF Vectorizer and vectorized the list of tokens into a size 50 vectors.
+5. Also saved the fitted vector for future use.
+6. Saved the vectors and its target in a separate file.
+7. Splitted the data into train and validation set.
+8. Made a keras sequential model. Used batchnormalization and dropout in between layers. The last layer gave output in form of probability by using softmax activation function.
+9. Fitted the model for 10 epoch and saved the model for future use.
+10. Evaluated the model on validation dataset and achieved accuracy, precision, recall and f1score of approximately 0.65
+
+Testing->
+1. You should have the following packages installed to test the model:
+	nltk, pickle, numpy, re, tensorflow
+2. Run the test.py file
+3. Enter the input
+4. The sentiment is displayed
+
+Future Scope->
+The model's accuracy is around 65% which is quite less. To increase the accuracy we can make more denser model with many neurons and layers. We may use CNN instead to increase the accuracy. Also if we have more computational resources we can increase the size of input vectors to increase accuracy.
+
+Thank You for reading till here.
+With Regards,
+Rudrransh Saxena
++919563993118
+https://www.linkedin.com/in/rudrransh-saxena/
